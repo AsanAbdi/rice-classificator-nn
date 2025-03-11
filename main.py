@@ -66,6 +66,7 @@ class MyModel(nn.Module):
     def forward(self, x):
         x = self.input_layer(x)
         x = self.hidden_activation(x)
+        x = self.dropout(x)
         x = self.linear(x)
         x = self.sigmoid(x)
         return x
